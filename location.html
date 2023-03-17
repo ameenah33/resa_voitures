@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Location de véhicule</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<header>
+		<h1>Location de véhicule</h1>
+		<nav>
+			<ul>
+				<li><a href="acceuil.html">Accueil</a></li>
+                <li><a href="mesLocations.html">Mes Locations</a></li>
+				<li><a href="location.html">Louer un véhicule</a></li>
+				<li><a href="profil.html">Profil</a></li>
+				<li><a href="logout.html">Déconnexion</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<main>
+		<h2>Louer un véhicule</h2>
+		<form method="post" action="reservation.php">
+			<label for="type">Type de véhicule :</label>
+			<select name="type">
+				<option value="Voiture">Voiture</option>
+				<option value="Moto">Moto</option>
+				<option value="Camion">Camion</option>
+			</select>
+			<label for="marque">Marque :</label>
+			<input type="text" name="marque" required>
+			<label for="modele">Modèle :</label>
+			<input type="text" name="modele" required>
+			<label for="date_debut">Date de début :</label>
+			<input type="date" name="date_debut" required>
+			<label for="date_fin">Date de fin :</label>
+			<input type="date" name="date_fin" required>
+			<button type="submit" name="submit">Louer</button>
+		</form>
+	</main>
+
+	<footer>
+		<p>&copy; 2023 Location de véhicule. Tous droits réservés.</p>
+	</footer>
+</body>
+</html>

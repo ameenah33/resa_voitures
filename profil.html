@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Profil utilisateur</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script>
+        // Récupération des éléments HTML
+        var btnInfoPerso = document.getElementById("btn-info-perso");
+        var inputNom = document.getElementById("nom");
+        var inputPrenom = document.getElementById("prenom");
+        var inputEmail = document.getElementById("email");
+
+        // Ajout d'un événement "click" sur le bouton "Informations personnelles"
+        btnInfoPerso.addEventListener("click", function() {
+            // Récupération des valeurs des champs de formulaire et affectation aux champs correspondants
+            inputNom.value = "Dupont";
+            inputPrenom.value = "Jean";
+            inputEmail.value = "jean.dupont@example.com";
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Profil utilisateur</h1>
+        <nav>
+            <ul>
+                <li><a href="accueil.php">Accueil</a></li>
+                <li><a href="location.php">Louer un véhicule</a></li>
+                <li class="active"><a href="profil.php">Profil</a></li>
+                <li><a href="logout.php">Déconnexion</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <button id="btn-modifier-info" type="button">Modifier mes informations</button>
+
+        <div id="informations-personnelles">
+            <h2>Informations personnelles</h2>
+            <form>
+                <label for="nom">Nom :</label>
+                <input type="text" id="nom" name="nom" value="Dupont">
+
+                <label for="prenom">Prénom :</label>
+                <input type="text" id="prenom" name="prenom" value="Jean">
+
+                <label for="email">Email :</label>
+                <input type="email" id="email" name="email" value="jean.dupont@example.com">
+
+                <label for="adresse">Adresse :</label>
+                <input type="text" id="adresse" name="adresse" value="123 rue de la Paix">
+
+                <label for="telephone">Téléphone :</label>
+                <input type="tel" id="telephone" name="telephone" value="0123456789">
+
+                <button type="submit">Enregistrer les modifications</button>
+            </form>
+        </div>
+
+
+        <script>
+            var btnModifierInfo = document.getElementById("btn-modifier-info");
+            var infosPerso = document.getElementById("informations-personnelles");
+
+            btnModifierInfo.addEventListener("click", function() {
+                infosPerso.style.display = "block";
+            });
+        </script>
+
+
+        <h2>Mes réservations</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Date de début</th>
+                    <th>Date de fin</th>
+                    <th>Statut</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php include("profil.php"); ?>
+            </tbody>
+        </table>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Location de véhicule. Tous droits réservés.</p>
+    </footer>
+</body>
